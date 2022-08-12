@@ -1,0 +1,53 @@
+@import 'styles/variables.scss';
+
+.bday-card {
+  display: flex;
+  flex-direction: row;
+
+  &__date,
+  .date {
+    width: 100%;
+    max-width: 400px;
+    background-color: $blue-100;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__text {
+      color: $white;
+    }
+
+  }
+
+  &__infos,
+  .infos {
+    width: 100%;
+    background-color: $white;
+    padding: 32px;
+
+    &__name {
+      margin-bottom: 8px;
+    }
+
+  }
+
+  &:first-child {
+    flex-direction: column;
+
+    .bday-card__date {
+      max-width: unset;
+    }
+
+    .bday-card__infos,
+    .infos {
+
+      &__name,
+      &__status-message {
+        text-align: center;
+      }
+    }
+
+  }
+
+}
