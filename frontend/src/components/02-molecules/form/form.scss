@@ -1,0 +1,49 @@
+@import 'styles/variables.scss';
+
+.form {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 32px;
+
+    &__input, .input {
+        display: flex;
+        flex-direction: column;
+        
+        &__container {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+        }
+
+        &__label {
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        &__field {
+            padding: 16px;
+            width: 100%;
+            border: 1px solid black;;
+            outline: none;
+            background-color: $white;
+
+            &--center {
+                text-align: center;
+            }
+        }
+
+    }
+     
+    &__button {
+        background-color: $green-100;
+        padding: 16px;
+        color: $black;
+        border: none;
+        outline: none;
+    }
+    
+
+}

@@ -3,7 +3,7 @@ const { Schema, model, models } = require('mongoose');
 const bdaysSchema = new Schema({
   firstname: { type: String, required: true },
   lastname: { type: String, required: true },
-  birthday: {
+  bdayDate: {
     day: { type: Number, required: true },
     month: { type: Number, required: true },
     year: { type: Number, required: true },

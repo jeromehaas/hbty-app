@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+}
+
+*::selection {
+    background-color: rgba(219, 164, 12, 0.99);
+    color: #ffffff;
+    opacity: 0.99;
+}

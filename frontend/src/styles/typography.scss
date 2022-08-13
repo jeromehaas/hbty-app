@@ -1,15 +1,15 @@
 * {
-  font-family: Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   font-weight: 800;
+  text-transform: lowercase;
 }
 
 .bday-card .date__text {
   font-size: 24px;
-  text-transform: uppercase;
 }
 
 .bday-card .infos__name {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .bday-card .infos__status-message {

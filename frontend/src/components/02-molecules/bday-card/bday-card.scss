@@ -3,19 +3,20 @@
 .bday-card {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
   &__date,
   .date {
     width: 100%;
-    max-width: 400px;
-    background-color: $blue-100;
+    max-width: 200px;
+    background-color: $green-100;
     padding: 32px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center; 
 
     &__text {
-      color: $white;
+      color: $black;
     }
 
   }
@@ -25,6 +26,27 @@
     width: 100%;
     background-color: $white;
     padding: 32px;
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 20px;
+      color: $black;
+      display: none;
+    }
+
+    &:hover {
+
+      .infos__icon {
+        display: block !important;
+      }
+
+    }
+
 
     &__name {
       margin-bottom: 8px;
@@ -46,6 +68,26 @@
       &__status-message {
         text-align: center;
       }
+
+    }
+
+  }
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    .bday-card__date {
+      max-width: unset;
+    }
+
+    .bday-card__infos,
+    .infos {
+
+      &__name,
+      &__status-message {
+        text-align: center;
+      }
+
     }
 
   }

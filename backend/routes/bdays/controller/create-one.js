@@ -3,14 +3,14 @@ const bdays = require('../../../models/bdays');
 const createOne = async (req, res) => {
 
   try {
-    const { firstname, lastname, birthday } = req.body;
+    const { firstname, lastname, bdayDate } = req.body;
     await bdays.create({
       firstname: firstname,
       lastname: lastname,
-      birthday: {
-        day: birthday.day, 
-        month: birthday.month, 
-        year: birthday.year
+      bdayDate: {
+        day: bdayDate.day, 
+        month: bdayDate.month, 
+        year: bdayDate.year
       }
     });
     const data = await bdays.find();
