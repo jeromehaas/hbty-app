@@ -14,9 +14,8 @@ const BdayCard = ({ data, loadingState }) => {
       body: JSON.stringify({ id: id }),
     });
     const data = await response.json();
-    console.log(data);
     setLoading(false);
-  }
+  };
 
   return (
     <div className="bday-card">
@@ -26,7 +25,11 @@ const BdayCard = ({ data, loadingState }) => {
       <div className="bday-card__infos infos">
         <FontAwesomeIcon className="infos__icon" icon={faXmark} onClick={ () => deleteBday(data._id)}/>
         <p className="infos__name">{data.firstname} {data.lastname}</p>
-        <p className="infos__status-message">{`Will be ${ data.ageOnNextBday } in ${ data.daysUntilNextBday} days`}</p>
+        <p className="infos__status-message">
+          { data.daysUntilNextBday === 0 
+          ? 'has bday today'
+          : `Will be ${ data.ageOnNextBday } in ${ data.daysUntilNextBday} ${ data.daysUntilNextBday === 1 ? 'day' : 'days'} ` }
+          </p>
       </div>
     </div>
   );

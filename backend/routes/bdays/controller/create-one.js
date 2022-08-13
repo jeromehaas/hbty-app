@@ -14,8 +14,10 @@ const createOne = async (req, res) => {
       }
     });
     const data = await bdays.find();
+    console.log('🌈 SUCCESS: bday has been created!');
     res.send(data);
   } catch(error) {
+    console.log('🔥 ERROR: could not create bday!');
     res.send(error);
   };
 

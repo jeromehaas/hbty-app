@@ -30,7 +30,8 @@ const [ loading, setLoading ] = loadingState;
     const dateOfNextBday = dayjs(`${currentYear}-${month}-${day}`);
     const year = dateOfNextBday.isAfter(today) ? currentYear : currentYear + 1;
     const nextBirthday = dayjs(`${year}-${month}-${day}`);
-    const daysUntilNextBirthday = nextBirthday.diff(today, 'day');
+    const differenceBetweenDays = nextBirthday.diff(today, 'day') + 1;
+    const daysUntilNextBirthday = differenceBetweenDays === 365 ? 0 : differenceBetweenDays;
     return daysUntilNextBirthday;
   };
 
@@ -78,7 +79,7 @@ const [ loading, setLoading ] = loadingState;
 
   const getOpenBdays = (bdays) => {
     const currentYear = dayjs().year();
-    const today = dayjs();
+    const today = dayjs().subtract(1, 'day');
     return bdays.filter((item) => {
       const dateOfNextBday = dayjs(`${currentYear}-${item.bdayDate.month}-${item.bdayDate.day}`);
       if (dateOfNextBday.isAfter(today)) return item;
@@ -87,7 +88,7 @@ const [ loading, setLoading ] = loadingState;
 
   const getPastBdays = (bdays) => {
     const currentYear = dayjs().year();
-    const today = dayjs();
+    const today = dayjs().subtract(1, 'day');
     return bdays.filter((item) => {
       const dateOfNextBday = dayjs(`${currentYear}-${item.bdayDate.month}-${item.bdayDate.day}`);
       if (dateOfNextBday.isBefore(today)) return item;

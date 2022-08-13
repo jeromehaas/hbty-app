@@ -1,0 +1,20 @@
+version: '3'
+services:
+
+  frontend: 
+    image: react-app
+    restart: unless-stopped
+    build: ./frontend/
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - ./frontend/:/usr/src/app
+
+  backend: 
+    image: express-app
+    restart: unless-stopped
+    build: ./backend/
+    ports:
+      - '3003:3003'
+    volumes: 
+      - ./backend/:/usr/src/app
